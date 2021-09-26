@@ -6,20 +6,27 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-let total = 0.0
+program(0)
 
-console.log("Current total: " + total)
-console.log()
-rl.question("Enter operation (+-*/, q to quit): ", (operator) => {
-    rl.question("Enter value: ", (value) => {
-      calculate(value, operator)
+function program(total){
+  console.log("Current total: " + total)
+  console.log()
+  rl.question("Enter operation (+-*/, q to quit): ", (operator) => {
+    if(operator === 'q'){
+      console.log(`Final total: ` + total)
       rl.close()
-    });
-});
+    }else{
+      rl.question("Enter value: ", (value) => {
+        total = calculate(value, operator, total)
+        program(total)
+      });
+    }
+  });
+}
 
-function calculate(val, operator){
+function calculate(val, operator, total){
   if(operator === '+'){
-    total += val
+    total += +val
   }else if(operator === '-'){
     total -= val
   }else if(operator === '*'){
@@ -31,5 +38,5 @@ function calculate(val, operator){
       total /= val
     }
   }
-  console.log(`Current total: ` + total)
+  return total
 }
