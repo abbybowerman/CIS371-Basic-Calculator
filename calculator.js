@@ -25,18 +25,27 @@ function program(total){
 }
 
 function calculate(val, operator, total){
-  if(operator === '+'){
-    total += +val
-  }else if(operator === '-'){
-    total -= val
-  }else if(operator === '*'){
-    total *= val
-  }else if(operator === '/'){
-    if(val == 0){
-      console.log(`Can't divide by zero!`)
+  num = Number(val)
+  
+  if(!isNaN(num)){
+    if(operator === '+'){
+      total += +val
+    }else if(operator === '-'){
+      total -= val
+    }else if(operator === '*'){
+      total *= val
+    }else if(operator === '/'){
+      if(val == 0){
+        console.log(`Can't divide by zero!`)
+      }else{
+        total /= val
+      }
     }else{
-      total /= val
+      console.log(operator + ` is not a valid operator`)
     }
+  }else{
+    console.log(val + ` is not a number`)
   }
+  
   return total
 }
