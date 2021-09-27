@@ -28,15 +28,15 @@ program(0)
  * @parm total the current total 
 **********************************************************************/
 function program(total){
-  //displays current total surrounded by newlines
+  //displays current total with 2 digits after decimal
   console.log()
-  console.log("Current total: " + total)
+  console.log("Current total: " + total.toFixed(2))
   console.log()
 
   //gets user input for operator
   rl.question("Enter operation (+-*/, q to quit): ", (operator) => {
     if(operator === 'q'){
-      console.log(`Final value: ` + total)
+      console.log(`Final value: ` + total.toFixed(2))
       rl.close()
     }else{
       //gets user input for numerical value
