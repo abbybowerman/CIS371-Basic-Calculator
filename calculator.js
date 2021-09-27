@@ -1,11 +1,11 @@
-/********************************************************************** 
+/* 
  * This is a basic calculator in JavaScript for CIS 371.
  * It uses Node.js.
  * Command to run: node calculator.js
  * 
  * @author Abigail Bowerman
  * @version Fall 2021
-**********************************************************************/
+*/
 
 //the program welcomes you :)
 console.log("Welcome to calculator.js!")
@@ -22,11 +22,11 @@ const rl = readline.createInterface({
 //having a parameter 0 specifies that the current total is 0
 program(0)
 
-/**********************************************************************
+/*
  * The main function to run the calculator.
  * 
  * @parm total the current total 
-**********************************************************************/
+*/
 function program(total){
   //displays current total with 2 digits after decimal
   console.log()
@@ -50,14 +50,14 @@ function program(total){
   });
 }
 
-/**********************************************************************
+/*
  * function that does the calcuation and returns the total
  * 
  * @parm val the user entered numerical value
  * @parm operator the user entered operator
  * @parm total the current running total
  * @returns the total after the calculation 
-**********************************************************************/
+*/
 function calculate(val, operator, total){
   //variable num is used to check if the user typed in a valid number
   num = Number(val)
